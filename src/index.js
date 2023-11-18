@@ -17,4 +17,3 @@ getWeather = async function(c) {
     const weatherData = await getWeather("new york");
     console.log(weatherData);
 })();
-
