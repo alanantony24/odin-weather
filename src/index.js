@@ -1,23 +1,19 @@
-const url = "http://api.weatherapi.com/v1/current.json?key=ffd100d9b42e4e71aa0162306231211&q=London&aqi=no"
+const API_KEY = "80f10b59a2b01b019e66f623edec6705"; // Replace 'YOUR_API_KEY' with your actual API key
+let country;
 
-//async function to call the API
-async function getWeatherData() {
+getWeather = async function(c) {
     try {
-        const response = await fetch(url);
-        const weatherData = await response.json();
-        return weatherData;
+        country = c;
+        const URL = `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${API_KEY}`;
+        const data = await fetch(URL);
+        const res = await data.json();
+        return res;
+    } catch (err) {
+        console.log(err);
     }
-    catch (error) {
-        alert(error);
-    }
-}
+};
 
-//invoke the function
-let weatherData  = getWeatherData();
-
-//use .then() to capture the results regardless of the promise state.
-//Promises are forward direction only; You can only resolve them once. 
-//The resolved value of a Promise is passed to its .then or .catch methods.
-weatherData.then(function(response) {
-    console.log(response);
-})
+(async () => {
+    const weatherData = await getWeather("new york");
+    console.log(weatherData);
+})();
