@@ -3,8 +3,75 @@
   <head>
     <meta charset="utf-8" />
     <title>Getting Started</title>
+    <link rel="stylesheet" href="../src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="mainContainer">
+      <form action="">
+        <label for="place"></label>
+        <input type="text" id="place" placeholder="Enter a place">
+      </form>
+      <div class="topContainer">
+        <div class="timeAndPlace">
+          <div class="dateTime">
+            <div class="time"><h1 class="time">10:00</h1><h4 class="amOrPm">AM</h4></div>
+            <h3 class="date">Monday, 10 October 2023</h3>
+          </div>
+          <div class="place">
+            <h1 class="city">Ernakulam, Kerala</h1>
+            <h3 class="country">India</h3>
+          </div>
+        </div>
+        <div class="weatherInfo">
+        </div>
+      </div>
+      <div class="bottomContainer">
+        <div class="tempToday">
+          <img src="../src/assets/sunny.svg" alt="sunny">
+          <div class="dayTemp">
+            <h3>Today</h3>
+            <h3>25&degC</h3>
+          </div>
+        </div>
+        <div class="weekForecast">
+          <div class="followingDays">
+            <h3>Tue</h3>
+            <img src="../src/assets/cloudy.svg" alt="cold">
+            <h3>2&degC</h3>
+          </div>
+          <div class="followingDays">
+            <h3>Wed</h3>
+            <img src="../src/assets/cold.svg" alt="cold">
+            <h3>2&degC</h3>
+          </div>
+          <div class="followingDays">
+            <h3>Thu</h3>
+            <img src="../src/assets/clear_night.svg" alt="cold">
+            <h3>2&degC</h3>
+          </div>
+          <div class="followingDays">
+            <h3>Friue</h3>
+            <img src="../src/assets/cold.svg" alt="cold">
+            <h3>2&degC</h3>
+          </div>
+          <div class="followingDays">
+            <h3>Sat</h3>
+            <img src="../src/assets/thunderstorm.svg" alt="cold">
+            <h3>2&degC</h3>
+          </div><div class="followingDays">
+            <h3>Sun</h3>
+            <img src="../src/assets/cold.svg" alt="cold">
+            <h3>2&degC</h3>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <h4>Made by Alan Antony :D</h4>
+      </footer>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
