@@ -29,6 +29,8 @@ input {
     border: none;
     border-radius: 5px;
     padding: 5px;
+    font-weight: bold;
+    font-style: italic;
 }
 
 input:focus {
@@ -38,6 +40,15 @@ input:focus {
 img {
     height: 80px;
     width: 80px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 30px;
+    color: white;
 }
 
 .mainContainer {
@@ -77,6 +88,7 @@ img {
     background-color: white;
     border-radius: 5px;
     align-items: center;
+    margin-bottom: 60px;
 }
 
 .tempToday {
