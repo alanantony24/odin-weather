@@ -1,6 +1,40 @@
-const getCityFromForm = () => {
+import moment from "moment/moment";
+
+//get the API info from the localStorage
+const info = JSON.parse(localStorage.getItem("currentWeatherData"));
+
+//get the city from the input box
+export const getCityFromForm = () => {
     const city = document.getElementById("place").value;
     return city;
 }
 
-export default getCityFromForm;
+export const changeDateTime = () => {
+    //get the current date and time info from the API data
+    let dayInfo = moment(info.location.localtime);
+
+    //use momentJS to format the date and time accordingly
+    const time = dayInfo.format('LT');
+    const dayOfTheWeek = dayInfo.format('dddd');
+    const day = dayInfo.format('LL');
+    
+    //select the dom elements and set the data to the elements
+    const dateDom = document.querySelector('.date');
+    const timeDom = document.querySelectorAll('h1')[0];
+    const amOrPm = document.querySelector('.amOrPm');
+    dateDom.textContent = day + ' ' + dayOfTheWeek;
+    timeDom.textContent = time.substring(0, time.length - 2);
+    amOrPm.textContent = time.substring(time.length - 2, time.length);
+}
+
+
+export const changeLocation = () => {
+    //extract the location info from the API data
+    let locationInfo = info.location;
+    
+    //select the dom elements and set the data to the elements
+    const city = document.querySelector('.city');
+    const country = document.querySelector('.country');
+    city.textContent = locationInfo.name + ', ' + locationInfo.region;
+    country.textContent = locationInfo.country; 
+}
