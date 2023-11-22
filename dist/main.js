@@ -16,7 +16,17 @@
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst API_KEY = \"bbd00243749b4d8493c115127231811\"; // Replace 'YOUR_API_KEY' with your actual API key\r\nlet country;\r\n\r\n/* harmony default export */ async function __WEBPACK_DEFAULT_EXPORT__(c) {\r\n    try {\r\n        country = c;\r\n        const URL = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${country}&aqi=no`;\r\n        const data = await fetch(URL);\r\n        const res = await data.json();\r\n        return res;\r\n    } catch (err) {\r\n        console.log(err);\r\n    }\r\n}\r\n\r\n\n\n//# sourceURL=webpack://odin-weather/./src/apiFunctions.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst API_KEY = \"bbd00243749b4d8493c115127231811\"; // Replace 'YOUR_API_KEY' with your actual API key\r\nlet country;\r\n\r\n/* harmony default export */ async function __WEBPACK_DEFAULT_EXPORT__(c) {\r\n    try {\r\n        country = c;\r\n        const URL = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${country}&aqi=no`;\r\n        const data = await fetch(URL);\r\n        const res = await data.json();\r\n        return res;\r\n    } catch (err) {\r\n        console.log(err);\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://odin-weather/./src/apiFunctions.js?");
+
+/***/ }),
+
+/***/ "./src/dom.js":
+/*!********************!*\
+  !*** ./src/dom.js ***!
+  \********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getCityFromForm = () => {\r\n    const city = document.getElementById(\"place\").value;\r\n    return city;\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getCityFromForm);\n\n//# sourceURL=webpack://odin-weather/./src/dom.js?");
 
 /***/ }),
 
@@ -26,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _apiFunctions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./apiFunctions */ \"./src/apiFunctions.js\");\n\r\n\r\nconst weatherData = (0,_apiFunctions__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(\"Singapore\");\r\nweatherData.then(function(result) {\r\n    console.log(result);\r\n})\r\n\n\n//# sourceURL=webpack://odin-weather/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _apiFunctions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./apiFunctions */ \"./src/apiFunctions.js\");\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n\r\n\r\n\r\nconst form = document.querySelector(\"form\");\r\nform.addEventListener(\"submit\", (event) => {\r\n  event.preventDefault();\r\n  const city = (0,_dom__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n  const weatherData = (0,_apiFunctions__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(city);\r\n  weatherData.then(function (result) {\r\n    console.log(result);\r\n  });\r\n});\r\n\n\n//# sourceURL=webpack://odin-weather/./src/index.js?");
 
 /***/ })
 
