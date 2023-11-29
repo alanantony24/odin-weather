@@ -8,9 +8,7 @@ form.addEventListener("submit", (event) => {
   const city = getCityFromForm();
   const weatherData = getWeather(city);
   weatherData.then(function (result) {
-    localStorage.clear();
-    localStorage.setItem("currentWeatherData", JSON.stringify(result));
-    changeDateTime();
-    changeLocation();
+    changeDateTime(result);
+    changeLocation(result);
   });
 });
