@@ -36,3 +36,14 @@ export const changeLocation = (info) => {
     city.textContent = locationInfo.name + ', ' + locationInfo.region;
     country.textContent = locationInfo.country; 
 }
+
+export const changeCurrentWeather = (info) => {
+    //get the info on temo from the current weather API
+    let currentTemp = info.current.temp_c;
+    
+    //select the dom element and set the temp data
+    const dayTemp = document.querySelector(".dayTemp");
+    const img = document.querySelector(".tempToday");
+    img.children[0].src = info.current.condition.icon;
+    dayTemp.children[1] = currentTemp + '°C';
+}

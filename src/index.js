@@ -1,5 +1,5 @@
-import getWeather from "./apiFunctions";
-import {getCityFromForm, changeDateTime, changeLocation} from "./dom";
+import getWeather from "./currentWeather";
+import {getCityFromForm, changeDateTime, changeLocation, changeCurrentWeather} from "./dom";
 
 
 const form = document.querySelector("form");
@@ -10,5 +10,6 @@ form.addEventListener("submit", (event) => {
   weatherData.then(function (result) {
     changeDateTime(result);
     changeLocation(result);
+    changeCurrentWeather(result)
   });
 });
