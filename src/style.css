@@ -108,14 +108,14 @@ footer {
 .weekForecast {
     display: flex;
     flex-direction: row;
-    width: 61%;
+    width: 100%;
+    justify-content: space-around;
     gap: 70px;
 }
 
 .followingDays {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
