@@ -1,19 +1,22 @@
-const API_KEY = "80f10b59a2b01b019e66f623edec6705"; // Replace 'YOUR_API_KEY' with your actual API key
-let country;
+import getWeather from "./currentWeather";
+import getForecastWeather from "./forecastWeather"
+import {getCityFromForm, changeDateTime, changeLocation, changeCurrentWeather, changeForecastWeather} from "./dom";
 
-getWeather = async function(c) {
-    try {
-        country = c;
-        const URL = `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${API_KEY}`;
-        const data = await fetch(URL);
-        const res = await data.json();
-        return res;
-    } catch (err) {
-        console.log(err);
-    }
-};
-
-(async () => {
-    const weatherData = await getWeather("new york");
-    console.log(weatherData);
-})();
+//Trigger the API call on submitting the form using the "Enter" key
+const form = document.querySelector("form");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const city = getCityFromForm();
+  const weatherData = getWeather(city);
+  weatherData.then(function (result) {
+    //once the promise is resolved, quickly change the date, location and temp
+    changeDateTime(result);
+    changeLocation(result);
+    changeCurrentWeather(result);
+  });
+  const forecastWeatherData = getForecastWeather(city);
+  forecastWeatherData.then(function (result) {
+    //upon resolving the promise, change the forecast weather information in the DOM.
+    changeForecastWeather(result)
+  })
+});

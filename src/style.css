@@ -1,0 +1,121 @@
+body {
+    background-image: url("https://media.giphy.com/media/n0Zt16UrMKNFu/giphy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Gabarito', sans-serif;
+}
+
+h1 {
+    font-size: 70px;
+    margin: 0;
+}
+
+h3 {
+    margin: 0;
+    font-size: 30px;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    height: 35px;
+    width: 550px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+input:focus {
+    outline: none;
+}
+
+img {
+    height: 80px;
+    width: 80px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 30px;
+    color: white;
+}
+
+.mainContainer {
+    width: 100%;
+}
+
+.timeAndPlace {
+    display: flex;
+    flex-direction: row;
+    padding: 5% 15%;
+    justify-content: space-between;
+}
+
+.time {
+    display: flex;
+    width: 150px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.place {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+.bottomContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90vw;
+    height: 40vh;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 5px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.tempToday {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 15%;
+    gap: 20px;
+    align-items: center;
+}
+
+.dayTemp {
+    display: flex;
+    flex-direction: column;
+}
+
+.weekForecast {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    gap: 70px;
+}
+
+.followingDays {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
