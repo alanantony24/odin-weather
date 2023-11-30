@@ -4,7 +4,7 @@ let country;
 export default async function(c) {
     try {
         country = c;
-        const URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${country}&days=7&aqi=yes&alerts=yes`;
+        const URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${country}&days=10&aqi=yes&alerts=yes`;
         const data = await fetch(URL);
         const res = await data.json();
         return res;

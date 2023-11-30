@@ -9,7 +9,6 @@ export const getCityFromForm = () => {
 export const changeDateTime = (info) => {
     //get the current date and time info from the API data
     let dayInfo = moment(info.location.localtime);
-    console.log(dayInfo)
 
     //use momentJS to format the date and time accordingly
     const time = dayInfo.format('LT');
@@ -45,5 +44,20 @@ export const changeCurrentWeather = (info) => {
     const dayTemp = document.querySelector(".dayTemp");
     const img = document.querySelector(".tempToday");
     img.children[0].src = info.current.condition.icon;
-    dayTemp.children[1] = currentTemp + '°C';
+    dayTemp.children[1].textContent = currentTemp + '°C';
+}
+
+export const changeForecastWeather = (info) => {
+    //get the forecast weather information
+    let forecastWeather = info.forecast.forecastday;
+    const daysOfWeek = document.querySelectorAll(".followingDays");
+
+    //API is limited to only 3 days of forecast
+    for (let index = 0; index < 3; index++) {
+        console.log(forecastWeather)
+        //change the day of the week, the icon, and the temperature
+        daysOfWeek[index].children[0].textContent = moment(forecastWeather[index].date).format('ddd')
+        daysOfWeek[index].children[1].src = forecastWeather[index].day.condition.icon;
+        daysOfWeek[index].children[2].textContent = forecastWeather[index].day.avgtemp_c + '°C';
+    }
 }
